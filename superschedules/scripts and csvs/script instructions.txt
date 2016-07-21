@@ -1,0 +1,29 @@
+TO WORK deltaspacetime.py:
+	python 2.7.10
+	team schedules as csvs
+		Columns: HOME, AWAY, DATE, TIME
+		column headings in all caps, in the above order
+	distances csv
+	team schedules named 'xxx.csv' where 'xxx' is the 3 letter abbreviation of team city
+		--found in abbrevtoindex or distances
+		
+	for 'allteamschedule.py'
+		remember to reset season dates on bigschedule (the template file)
+		if the script says there's a str object at the end, make sure there isn't an extra line 
+			when opening in notepad++
+		if that doesn't work, remake bigschedule.
+		-AT END CHECK 'allgames.csv' to make sure team abbreviations have populated.  If not, add them in
+	
+	'cleanup.py' takes a schedule copy-pasted from NHL.com
+		-unmerge rows
+		-move date and time down 1 rows
+		-delete all non-game or non-empty rows
+		-save as csv
+		-delete columns E and F (only need 'Date', 'Visiting Team', 'Home Team', 'Time' in that order)
+		-gives 31 files - individual team schedules and league schedule without any weird empty rows in middle
+		
+	IN CASE OF EXPANSION/RELOCATION:
+		-remove old teams' rows (to 'distances.csv')
+		-add new teams' rows (to 'distances.csv')
+		-adjust teamtonumber for new entries and their indeces (in 'deltaspacetime.py')
+		-remove/add former/new teams from teamtimezone and teamtoabbrev (in 'cleanup.py')
