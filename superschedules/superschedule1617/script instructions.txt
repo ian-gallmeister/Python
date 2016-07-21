@@ -1,0 +1,23 @@
+To Create all the schedules etc... 
+
+0. Run everything from an otherwise empty directory before starting to organize files
+1. Get the year's schedule.  Name it 'nhlschedYRYR.csv'
+  YRYR are the year(s)
+  Format: 4 columns: DATE, VISITING TEAM, HOME TEAM, TIME (ET) in that order
+  DATE: DAY MON ##, YYYY e.g. Wed Oct 12, 2016
+  TIME: XX:XX PM/AM ET
+2. Run cleanup.py - it creates 'leagueschedYRYR.csv' and individual schedules for each team
+  2(a). Delete the schedule for Atlanta ('atl.csv').  It'll be turned into Vegas' next year
+3. Create 'bigschedule.csv' - A single column csv with Date\Team and then the days of the NHL season underneath
+  Date format: MM/DD/YYYY
+4. Run allteamschedule.py - It takes bigschedule and creates 'allgames.csv'
+  Allgames is a spreadsheet with teams as columns, dates as rows, and opponent with home/away in cells
+5. Run deltaspacetime.py - Needs 'distances.csv'
+  It creates schedules for each team with 'time since' and 'distance traveled from' previous games
+
+Note: 4 and 5 should be interchangeable
+
+Note: Creating the single excel conglomeration was all done by hand in google sheets.  
+   Download this year's and replace the data to get new results.
+
+
